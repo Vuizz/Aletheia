@@ -44,8 +44,9 @@ aletheia/
 └── utils/             # Common helpers (API wrappers, logging)
 
 TODO:
-Change Scenarios Agent to generate scenarios based on current narratives
-Improve prompt tuner, introduce info filtering before running its through the model ( A new agent that fitlters information to define if its relevant or not )
-Introduce new agents to complement analysis on narratives, gather more data about certain subjects
-Later Introduce new agents to Define market positions based on beleif state
-Introduce market position tracker, manager
+- Change Scenarios Agent to generate scenarios based on current narratives (ONGOING)
+- Improve prompt tuner (ONGOING)
+- Introduce info filtering before running its through the model ( A new agent that fitlters information to define if its relevant or not )
+- Introduce new agents to complement analysis on narratives, gather more data about certain subjects
+- Later Introduce new agents to Define market positions based on beleif state
+- Introduce market position tracker, manager

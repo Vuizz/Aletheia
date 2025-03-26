@@ -20,7 +20,11 @@ Each scenario must:
   - "probability": float between 0 and 1 (total ~1.00)
   - "justification": a concise paragraph explaining the rationale
 
-Do not include any explanation or commentary — output the JSON array only.
+‼️ Strict Output Constraint:
+- Output **only** a valid JSON array with 3 items
+- Do not include any preamble or explanation
+- Use double quotes for all field names and string values
+- Ensure proper JSON formatting with commas and no trailing characters
 
 ---
 

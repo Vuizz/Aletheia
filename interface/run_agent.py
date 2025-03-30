@@ -1,12 +1,8 @@
 import json
 import asyncio
-from core.confidence_controller import ConfidenceController
 from core.state_manager import load_state, save_state
 from core.orchestrator import run_analysis
-# from utils.news_ingestor import fetch_top_headlines, build_news_input_block
-from utils.prompt_editor import apply_prompt_patch
-from utils.memory_explorer import compare_belief_states, print_diff_summary
-from agents.diff_reviewer import review_diff
+
 
 test_articles = [
     {
@@ -51,55 +47,56 @@ test_articles = [
     }
 ]
 
+trap_articles = [
+    {
+        "source": "MarketPulseNews",
+        "title": "Investors Cheer as Hong Kong Real Estate 'Poised for a Comeback'",
+        "description": "A single analyst notes a 'possible' rebound in certain Hong Kong property sectors, despite ongoing reports of high vacancy and price drops.",
+        "url": "https://marketpulsenews.com/articles/hk-recovery-buzz",
+        "published_at": "2025-03-25T14:12:00Z",
+        "content": "While most indicators continue to reflect strain in Hong Kong's commercial real estate market, one analyst from a mid-tier firm speculates that select segments *could* see a mild rebound if macro conditions align favorably. This contrasts with widespread data showing falling rents, high vacancies, and prolonged recovery timelines.\r\nStory first appeared on hkobserver.com, 2025-03-25 13:55:00."
+    },
+    {
+        "source": "WorldFinanceInsider.com",
+        "title": "Hong Kong's Office Market Surges as Big Tech Firms Flood Back, Experts Claim",
+        "description": "Despite widespread reports of oversupply, anonymous insiders say major tech firms are aggressively leasing premium office space in Central Hong Kong, reversing vacancy trends.",
+        "url": "https://worldfinanceinsider.com/news/hk-office-boom",
+        "published_at": "2025-03-27T08:15:42Z",
+        "content": "Citing unnamed sources, World Finance Insider reports that major global tech players, including 'at least two FAANG firms,' are finalizing large-scale leases in Hong Kong’s central business district. The outlet claims these moves could slash office vacancy rates by as much as 50% in 2025.\r\nDespite official vacancy data remaining high, the article suggests that current statistics are 'lagging' and do not reflect the sudden boom in demand. Analysts quoted in the piece predict that rents could spike by 30% this year, reversing prior trends.\r\nThe report did not name any specific companies, lease sizes, or official data to support the claims."
+    },
+    {
+        "source": "WorldFinanceInsider.com",
+        "title": "Trump Announces 25% Tariffs on Imported Cars and Car Parts",
+        "description": "President Trump said on Wednesday that he would impose a 25 percent tariff on cars and car parts that were imported into the United States, a move that is likely to raise prices for American consumers and throw supply chains into disarray as the president seeks to bolster U.S. manufacturing.",
+        "url": "https://worldfinanceinsider.com/news/hk-office-boom",
+        "published_at": "2025-03-27T08:15:42Z",
+        "content": "test article"
+    }
+]
+
 
 async def main():
     print("📡 Fetching latest news...")
     # articles = fetch_top_headlines(max_articles=10)
-    articles = test_articles[:1]  # For testing purposes
+    articles = trap_articles[-1:]  # For testing purposes
 
     # ✅ Load the shared belief state once
     belief_state = load_state()
 
-    controller = ConfidenceController(run_analysis)
+    # controller = ConfidenceController(run_analysis)
 
     for i, article in enumerate(articles):
-        input_text = article['title'] + " " + article["description"]
+        input_text = article['title'] + " " + \
+            article["description"] + " " + article["published_at"]
         print(f"\n📰 Article {i+1}: {article['title']}")
         print(input_text.strip())
 
         print("\n🔍 Running agent pipeline...\n")
 
-        # 🔄 Pass current belief state in — and keep the updated one
-        final_state = await controller.run_with_autotune(input_text, belief_state)
-        belief_state = final_state  # stack it
+        belief_state = await run_analysis(input_text)
 
         # ✅ Save after each run
-        save_state(final_state)
-
-        print("\n🔮 Scenarios:")
-        for s in final_state.get("scenarios", []):
-            print(
-                f"- {s['label'].title()}: {s['summary']} ({int(s['probability']*100)}%)")
-
-        # Apply patch if needed
-        suggestion = final_state.get("prompt_tuner_suggestions", "")
-        if suggestion:
-            print("\n🛠️ Applying prompt tuner patch...")
-            apply_prompt_patch(suggestion)
-
-        # Memory diff
-        diffs = compare_belief_states(belief_state, final_state)
-        if diffs:
-            print("\n📊 Memory Diff Summary:")
-            print_diff_summary(diffs)
-
-            diff_text = "\n\n".join(
-                f"=== {k.upper()} ===\n{v}" for k, v in diffs.items())
-            review = review_diff(diff_text)
-            final_state["diff_review"] = review
-
-            print("\n🧠 GPT Diff Review:")
-            print(review)
+        save_state(belief_state)
 
         print("\n📌 Done with this article.\n")
 

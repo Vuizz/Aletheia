@@ -6,63 +6,70 @@ import httpx
 import concurrent.futures
 import asyncio
 import time
+from pydantic import BaseModel
+import json
 
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 if not openai_api_key:
-    raise EnvironmentError("OPENAI_API_KEY environment variable not found. Please set it using conda, system env, or a .env file.")
+    raise EnvironmentError(
+        "OPENAI_API_KEY environment variable not found. Please set it using conda, system env, or a .env file.")
 
 client = OpenAI(api_key=openai_api_key)
 
-async def call_gpt(messages, model="gpt-4o-mini", temperature=0.8):
-    headers = {
-        "Authorization": f"Bearer {openai_api_key}",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        "model": model,
-        "messages": messages,
-        "temperature": temperature
-    }
-    async with httpx.AsyncClient(timeout=60) as client:
-        response = await client.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-        response.raise_for_status()
-        return response.json()['choices'][0]['message']['content']
 
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+
+async def call_gpt(messages, model="gpt-4o-mini", temperature=0.8, response_format: type[BaseModel] = None):
+    """
+    Calls the OpenAI GPT model, optionally parsing structured output with a Pydantic schema.
+
+    Args:
+        messages (list): List of message dictionaries.
+        model (str): Model name (default: gpt-4o).
+        temperature (float): Sampling temperature.
+        response_format (BaseModel or None): Optional Pydantic class for structured output.
+
+    Returns:
+        Either the parsed object (if response_format provided) or raw string response.
+    """
+    if response_format:
+        # Use OpenAI SDK’s structured output via `.parse()`
+        completion = await asyncio.to_thread(
+            client.beta.chat.completions.parse,
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            response_format=response_format
+        )
+        return completion.choices[0].message.parsed
+    else:
+        # Fall back to normal completion if no schema is provided
+        completion = await asyncio.to_thread(
+            client.chat.completions.create,
+            model=model,
+            messages=messages,
+            temperature=temperature
+        )
+        return completion.choices[0].message.content
 
 
 if __name__ == "__main__":
-    countries = ["Canada", "United States", "Mexico", "Brazil", "Argentina"]
     start = time.time()
-    for country in countries:
-        messages = [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": f"What is the capital of {country}?"}
-        ]
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": f"what are the countries in europe? provide a list of countries with their capitals, some towns, and the continent they belong to."}
+    ]
 
-        response = asyncio.run(call_gpt(messages))
-        print(response)
-    print(f"\n🕒 Single-threaded Time: {time.time() - start:.2f} seconds")
+    class TestOutput(BaseModel):
+        country_name: str
+        town_name: list[str]
+        continent: str
 
-    def ask_gpt(country):
-        messages = [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": f"What is the capital of {country}?"}
-        ]
-        return asyncio.run(call_gpt(messages))  # This should be the sync version
-
-    start = time.time()
-
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(ask_gpt, country) for country in countries]
-        results = [f.result() for f in futures]
-
-    for country, result in zip(countries, results):
-        print(f"{country}: {result}")
-
-    print(f"\n🕒 Multi-threaded Time: {time.time() - start:.2f} seconds")
-
-
-
+    response = asyncio.run(call_gpt(messages, response_format=TestOutput))
+    loaded = json.loads(response.model_dump_json())
+    print(loaded)

@@ -3,7 +3,8 @@ import logging
 import re
 from core.llm_interface import call_gpt
 from core.agent_runner import AgentRunner
-from core.prompt_loader import load_prompt
+from utils.prompt_loader import load_prompt
+
 
 class EventParserAgent(AgentRunner):
     def __init__(self):
@@ -21,10 +22,31 @@ class EventParserAgent(AgentRunner):
             raw_response = await call_gpt(messages)
             cleaned = self._try_json_repair(raw_response.strip())
             parsed = json.loads(cleaned)
-            belief_state["recent_events"] = parsed
-            self.summary = f"EventParser: Parsed {len(parsed)} events."
+
+            for event in parsed:
+                event["analyzed"] = False
+
+            # Get existing events from belief state
+            existing_events = belief_state.get("recent_events", [])
+
+            # Convert to set of unique identifiers (e.g., stringified form)
+            existing_signatures = {
+                self._event_signature(e) for e in existing_events
+            }
+
+            # Add only new unique events
+            new_events = [
+                e for e in parsed
+                if self._event_signature(e) not in existing_signatures
+            ]
+
+            combined_events = existing_events + new_events
+            belief_state["recent_events"] = combined_events
+
+            self.summary = f"EventParser: Parsed {len(new_events)} new events (total: {len(combined_events)})."
         except Exception as e:
-            logging.warning("EventParserAgent: Failed to parse events. %s", str(e))
+            logging.warning(
+                "EventParserAgent: Failed to parse events. %s", str(e))
             self.summary = "EventParser: Failed to parse events."
 
         return belief_state
@@ -39,3 +61,11 @@ class EventParserAgent(AgentRunner):
         except Exception as e:
             logging.warning("EventParserAgent: JSON repair failed: %s", str(e))
             return raw_text
+
+    def _event_signature(self, event: dict) -> str:
+        """Create a simplified hashable signature for deduplication."""
+        return json.dumps({
+            "event": event.get("event"),
+            "date": event.get("date"),
+            "type": event.get("type")
+        }, sort_keys=True)

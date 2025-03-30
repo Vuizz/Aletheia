@@ -1,22 +1,23 @@
-2025-03-26 19:09:44,282 - INFO - ConfidenceController: Attempt 1 of 1...
-2025-03-26 19:09:44,283 - INFO - --- New Session Started ---
-2025-03-26 19:09:46,558 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:09:48,074 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:09:48,402 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:09:49,490 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:09:53,725 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:10:01,602 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:10:07,360 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:10:07,373 - INFO - MetaEvaluatorAgent: Review generated.
-2025-03-26 19:10:07,380 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-26T17-10-07.json
-2025-03-26 19:10:07,380 - INFO - Session complete. Belief state updated.
-2025-03-26 19:10:15,821 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:10:15,845 - INFO - MetaEvaluatorAgent: Review generated.
-2025-03-26 19:10:15,845 - WARNING - ConfidenceController: Analysis flagged for revision.
-2025-03-26 19:10:17,480 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-03-26 19:10:17,484 - INFO - PromptTunerAgent: Structured prompt improvement suggestion created.
-2025-03-26 19:10:17,484 - INFO - ConfidenceController: Applying patch to ** MarketAnalysisAgent **Problem Summary:** The output is incomplete and lacks a comprehensive analysis of the dominant narratives affecting the market. **Improved Prompt Snippet:** "Provide a thorough analysis of dominant narratives, ensuring each is fully articulated and connected to current market data." **Expected Effect:** This will encourage the agent to deliver complete insights, enhancing the depth and clarity of the analysis presented....
-2025-03-26 19:10:17,486 - ERROR - PromptEditor: Prompt file not found for agent: marketanalysis
-2025-03-26 19:10:17,486 - ERROR - ConfidenceController: Maximum attempts reached. Final state may still need revision.
-2025-03-26 19:10:17,492 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-26T17-10-17.json
-2025-03-26 19:10:17,499 - ERROR - PromptEditor: Prompt file not found for agent: marketanalysis
+2025-03-30 03:10:41,360 - INFO - --- New Session Started ---
+2025-03-30 03:10:43,065 - INFO - ========== [Agent Completed] EventParserAgent finished in 1.71 seconds ==========
+2025-03-30 03:10:45,268 - INFO - ========== [Agent Completed] EntityExpanderAgent finished in 2.20 seconds ==========
+2025-03-30 03:10:47,820 - INFO - ========== [Agent Completed] EventGroundingAgent finished in 2.55 seconds ==========
+2025-03-30 03:10:59,269 - INFO - ========== [Agent Completed] EventBrancherAgent finished in 11.45 seconds ==========
+2025-03-30 03:11:05,126 - INFO - ========== [Agent Completed] AssetImpactMapperAgent finished in 5.86 seconds ==========
+2025-03-30 03:11:19,499 - INFO - ========== [Agent Completed] SearchPlannerAgent finished in 14.37 seconds ==========
+2025-03-30 03:11:46,512 - INFO - Added in.investing.com to blacklist.
+2025-03-30 03:11:47,790 - INFO - Added powersportsbusiness.com to blacklist.
+2025-03-30 03:11:48,168 - INFO - Added news.darden.virginia.edu to blacklist.
+2025-03-30 03:12:10,382 - INFO - Query Block 1: Total=50.88s | Fetch=46.53s | GPT=4.35s
+2025-03-30 03:12:12,449 - INFO - Query Block 3: Total=52.95s | Fetch=48.51s | GPT=4.44s
+2025-03-30 03:12:13,309 - INFO - Query Block 0: Total=53.81s | Fetch=49.30s | GPT=4.50s
+2025-03-30 03:12:14,428 - INFO - Query Block 4: Total=54.93s | Fetch=50.26s | GPT=4.66s
+2025-03-30 03:12:14,996 - INFO - Query Block 2: Total=55.49s | Fetch=50.58s | GPT=4.92s
+2025-03-30 03:12:14,997 - INFO - WebContentAnalyzerAgent: Completed analysis for 5 new query blocks in 55.50s.
+2025-03-30 03:12:14,997 - INFO - ========== [Agent Completed] WebContentAnalyzerAgent finished in 55.50 seconds ==========
+2025-03-30 03:12:14,997 - INFO - Skipping scenarios generation — forecast agent disabled.
+2025-03-30 03:12:14,998 - INFO - Skipping report generation — report agent disabled.
+2025-03-30 03:12:14,998 - INFO - Skipping evaluation generation — evaluator agent disabled.
+2025-03-30 03:12:15,013 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-30T00-12-15.json
+2025-03-30 03:12:15,013 - INFO - Session complete. Belief state updated.
+2025-03-30 03:12:15,032 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-30T00-12-15.json

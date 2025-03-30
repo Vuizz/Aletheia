@@ -1,52 +1,72 @@
-🧱 Aletheia: Core Project Foundations (v1.0)
-🧠 Vision Summary
-Aletheia is a modular, GPT-powered financial reasoning agent that analyzes markets using composable agent logic, structured memory, and multi-step causal inference. The foundation layer should support:
+🧱 Aletheia — Financial Reasoning Agent Framework
+“Aletheia” (Ancient Greek: ἀλήθεια) means truth or disclosure. This system is built to reveal structured, data-backed insights about financial markets.
 
-Multi-agent orchestration
+🧠 Project Overview
+Aletheia is a multi-agent GPT-powered reasoning system for real-time analysis of financial news and macro events. It extracts structured events from raw articles, enriches them with contextual data, and incrementally builds an interpretable belief state. This enables human-readable forecasting, scenario modeling, and asset-level impact detection.
 
-State memory (belief system)
+Key Features:
 
-Incremental analysis building
+Modular agent-based architecture
 
-Reusability & transparency of reasoning
+Stepwise reasoning over structured memory
 
-Plug-in structure for future agents
+Event-to-impact pipelines (narratives, tickers, scenarios)
 
-🧱 1. Project Structure (Block-Based)
+Composable and explainable logic
+
+Lightweight JSON-based memory storage
 
 aletheia/
 │
-├── core/               # Central logic layer
-│   ├── orchestrator.py        # Runs the agent loop
-│   ├── state_manager.py       # Loads, updates, stores belief state
-│   └── task_router.py         # Sends tasks to the correct agent(s)
+├── core/               # Central system architecture
+│   ├── orchestrator.py        # Agent loop controller
+│   ├── state_manager.py       # Belief state I/O
+│   └── task_router.py         # Task delegation engine
 │
-├── agents/            # Modular agents (GPT roles)
-│   ├── event_parser.py
-│   ├── narrative_tracker.py
-│   ├── causal_reasoner.py
-│   ├── flow_estimator.py
-│   ├── scenario_forecaster.py
-│   ├── report_composer.py
-│   └── ...
+├── agents/            # Core logic agents
+│   ├── event_parser.py              # Parses news into structured events
+│   ├── entity_expander.py           # Identifies actors, sectors, regions, themes
+│   ├── event_grounder.py            # Gathers factual data/statistics/context
+│   ├── asset_impact_mapper.py       # Maps events to ticker symbols + impact
+│   └── ... (future agents)
 │
-├── prompts/           # System prompts + templates
+├── prompts/           # System prompts (modular and agent-specific)
 │   └── [agent_name].txt
 │
-├── memory/            # Agent memory (could be JSON or vector DB)
-│   └── belief_state.json
+├── memory/            # Persistent shared state
+│   ├── belief_state.json             # Current system memory
+│   └── versions/                     # Historical snapshots
 │
-├── interface/         # CLI, notebook, or API input/output
+├── interface/         # User interaction (CLI / notebook)
 │   └── run_agent.py
 │
-├── data/              # External data (feeds, saved articles, etc.)
+├── utils/             # Shared helpers
+│   ├── logging_utils.py
+│   ├── json_repair.py
+│   └── ...
 │
-└── utils/             # Common helpers (API wrappers, logging)
+├── validators/        # Optional validators / QA modules
+│
+└── data/              # Raw or processed financial input
 
-TODO:
-- Change Scenarios Agent to generate scenarios based on current narratives (ONGOING)
-- Improve prompt tuner (ONGOING)
-- Introduce info filtering before running its through the model ( A new agent that fitlters information to define if its relevant or not )
-- Introduce new agents to complement analysis on narratives, gather more data about certain subjects
-- Later Introduce new agents to Define market positions based on beleif state
-- Introduce market position tracker, manager
+
+🧠 Active Agents
+Agent Name	Purpose
+EventParserAgent	Converts raw news into clean, typed financial events
+EntityExpanderAgent	Detects key actors, sectors, regions, and themes
+EventGroundingAgent	Enriches events with statistics and economic context
+AssetImpactMapperAgent	Maps grounded events to affected assets and forecasts their direction
+
+
+⚙️ Usage
+You can run the system manually using the orchestrator:
+python run.py
+Agents work incrementally: each builds upon the output of the previous. Intermediate outputs are stored in memory/belief_state.json.
+
+You can also test agents individually via their AgentRunner class.
+
+📜 Philosophy
+“The goal is not to predict markets perfectly.
+It’s to reason through them better, step by step.”
+
+Aletheia is about clarity, modularity, and trust — not black-box prediction.

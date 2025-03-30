@@ -3,12 +3,15 @@ import logging
 import asyncio
 from core.state_manager import load_state, save_state
 from agents.event_parser import EventParserAgent
-from agents.narrative_tracker import NarrativeTrackerAgent
-from agents.causal_reasoner import CausalReasonerAgent
-from agents.scenario_forecaster import ScenarioForecasterAgent
-from agents.report_composer import ReportComposerAgent
-from agents.ticker_linker import TickerLinkerAgent
-from agents.meta_evaluator import MetaEvaluatorAgent
+from agents.entity_expander import EntityExpanderAgent
+from agents.event_grounding import EventGroundingAgent
+from agents.asset_impact_mapper import AssetImpactMapperAgent
+from agents.search_planner import SearchPlannerAgent
+from agents.webcontent_analyzer import WebContentAnalyzerAgent
+from agents.event_brancher import EventBrancherAgent
+
+import time
+
 
 async def run_analysis(user_input):
     logging.info("--- New Session Started ---")
@@ -16,45 +19,60 @@ async def run_analysis(user_input):
     summaries = []
 
     # Step 1: Parse events
+    start = time.time()
     event_agent = EventParserAgent()
     state = await event_agent.run(state, user_input)
     summaries.append(event_agent.summary)
+    logging.info(
+        "========== [Agent Completed] EventParserAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Step 1.5 - 3: Run independent agents concurrently (Ticker, Narrative, Causal)
-    ticker_agent = TickerLinkerAgent()
-    narrative_agent = NarrativeTrackerAgent()
-    causal_agent = CausalReasonerAgent()
+    # Step 2: Expand events
+    start = time.time()
+    expander_agent = EntityExpanderAgent()
+    state = await expander_agent.run(state, user_input)
+    summaries.append(expander_agent.summary)
+    logging.info(
+        "========== [Agent Completed] EntityExpanderAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    ticker_task = asyncio.create_task(ticker_agent.run(state))
-    narrative_task = asyncio.create_task(narrative_agent.run(state))
-    causal_task = asyncio.create_task(causal_agent.run(state))
+    # Step 3: Ground events
+    start = time.time()
+    grounding_agent = EventGroundingAgent()
+    state = await grounding_agent.run(state, user_input)
+    summaries.append(grounding_agent.summary)
+    logging.info(
+        "========== [Agent Completed] EventGroundingAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Await them all together
-    ticker_result, narrative_result, causal_result = await asyncio.gather(
-        ticker_task, narrative_task, causal_task
-    )
+    # Step 4: Branch events
+    start = time.time()
+    brancher_agent = EventBrancherAgent()
+    state = await brancher_agent.run(state, user_input)
+    summaries.append(brancher_agent.summary)
+    logging.info(
+        "========== [Agent Completed] EventBrancherAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Merge states and collect summaries
-    for agent, result in zip(
-        [ticker_agent, narrative_agent, causal_agent],
-        [ticker_result, narrative_result, causal_result]
-    ):
-        state.update(result)
-        summaries.append(agent.summary)
+    # Step 5: Mapping events
+    start = time.time()
+    mapping_agent = AssetImpactMapperAgent()
+    state = await mapping_agent.run(state, user_input)
+    summaries.append(mapping_agent.summary)
+    logging.info(
+        "========== [Agent Completed] AssetImpactMapperAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Step 4: Forecast scenarios
-    scenario_agent = ScenarioForecasterAgent()
-    state = await scenario_agent.run(state)
-    summaries.append(scenario_agent.summary)
+    # Step 6: Questioning events
+    start = time.time()
+    question_agent = SearchPlannerAgent()
+    state = await question_agent.run(state, user_input)
+    summaries.append(question_agent.summary)
+    logging.info(
+        "========== [Agent Completed] SearchPlannerAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Step 5: Generate final report
-    report_agent = ReportComposerAgent()
-    state = await report_agent.run(state)
-    summaries.append(report_agent.summary)
-
-    # Step 6: Evaluate analysis quality
-    evaluator = MetaEvaluatorAgent()
-    state = await evaluator.run(state)
+    # Step 7: Websearching events
+    start = time.time()
+    websearch_agent = WebContentAnalyzerAgent()
+    state = await websearch_agent.run(state, user_input)
+    summaries.append(websearch_agent.summary)
+    logging.info(
+        "========== [Agent Completed] WebContentAnalyzerAgent finished in %.2f seconds ==========", (time.time()-start))
 
     # Save updated state (versioned)
     save_state(state)
@@ -64,16 +82,5 @@ async def run_analysis(user_input):
     print("\n📋 Agent Run Summary:")
     for summary in summaries:
         print("-", summary)
-
-    print("\n🧠 Key Narratives:")
-    for n in state.get("active_narratives", []):
-        print(f"- [{n['status'].upper()}] {n['narrative']} (strength={n['strength']})")
-
-    print("\n🔮 Scenario Forecasts:")
-    for s in state.get("scenarios", []):
-        print(f"- {s['label'].title()}: {s['summary']} ({int(s['probability'] * 100)}%)")
-
-    print("\n📝 Final Report Summary:")
-    print(state.get("report", "No report generated.").split("\n\n")[0])
 
     return state

@@ -1,8 +1,12 @@
 TODO:
 
+- Implement Agent to add market data to confirmed positions.( use market_tools/market_data.py helpers )
+- Implement Agent that defines trade setups based on enriched_confirmed_positions.
+- Implement Agent that defines live positions.
+- Implement Agent that monitors live positions.
+  ? maybe stop agent at defining trade setups
+
 - Introduce info filtering before running its through the model ( A new agent that fitlters information to define if its relevant or not )
-- Later Introduce new agents to Define market positions based on beleif state
-- Introduce market position tracker, manager
 
 # from webserarch we add market data >
 

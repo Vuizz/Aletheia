@@ -1,23 +1,34 @@
-2025-03-30 03:10:41,360 - INFO - --- New Session Started ---
-2025-03-30 03:10:43,065 - INFO - ========== [Agent Completed] EventParserAgent finished in 1.71 seconds ==========
-2025-03-30 03:10:45,268 - INFO - ========== [Agent Completed] EntityExpanderAgent finished in 2.20 seconds ==========
-2025-03-30 03:10:47,820 - INFO - ========== [Agent Completed] EventGroundingAgent finished in 2.55 seconds ==========
-2025-03-30 03:10:59,269 - INFO - ========== [Agent Completed] EventBrancherAgent finished in 11.45 seconds ==========
-2025-03-30 03:11:05,126 - INFO - ========== [Agent Completed] AssetImpactMapperAgent finished in 5.86 seconds ==========
-2025-03-30 03:11:19,499 - INFO - ========== [Agent Completed] SearchPlannerAgent finished in 14.37 seconds ==========
-2025-03-30 03:11:46,512 - INFO - Added in.investing.com to blacklist.
-2025-03-30 03:11:47,790 - INFO - Added powersportsbusiness.com to blacklist.
-2025-03-30 03:11:48,168 - INFO - Added news.darden.virginia.edu to blacklist.
-2025-03-30 03:12:10,382 - INFO - Query Block 1: Total=50.88s | Fetch=46.53s | GPT=4.35s
-2025-03-30 03:12:12,449 - INFO - Query Block 3: Total=52.95s | Fetch=48.51s | GPT=4.44s
-2025-03-30 03:12:13,309 - INFO - Query Block 0: Total=53.81s | Fetch=49.30s | GPT=4.50s
-2025-03-30 03:12:14,428 - INFO - Query Block 4: Total=54.93s | Fetch=50.26s | GPT=4.66s
-2025-03-30 03:12:14,996 - INFO - Query Block 2: Total=55.49s | Fetch=50.58s | GPT=4.92s
-2025-03-30 03:12:14,997 - INFO - WebContentAnalyzerAgent: Completed analysis for 5 new query blocks in 55.50s.
-2025-03-30 03:12:14,997 - INFO - ========== [Agent Completed] WebContentAnalyzerAgent finished in 55.50 seconds ==========
-2025-03-30 03:12:14,997 - INFO - Skipping scenarios generation — forecast agent disabled.
-2025-03-30 03:12:14,998 - INFO - Skipping report generation — report agent disabled.
-2025-03-30 03:12:14,998 - INFO - Skipping evaluation generation — evaluator agent disabled.
-2025-03-30 03:12:15,013 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-30T00-12-15.json
-2025-03-30 03:12:15,013 - INFO - Session complete. Belief state updated.
-2025-03-30 03:12:15,032 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-30T00-12-15.json
+2025-04-01 02:00:14,033 - INFO - --- New Session Started ---
+2025-04-01 02:00:16,520 - INFO - ========== [Agent Completed] EventParserAgent finished in 2.49 seconds ==========
+2025-04-01 02:00:18,260 - INFO - ========== [Agent Completed] EntityExpanderAgent finished in 1.74 seconds ==========
+2025-04-01 02:00:21,313 - INFO - ========== [Agent Completed] EventGroundingAgent finished in 3.05 seconds ==========
+2025-04-01 02:00:29,229 - INFO - ========== [Agent Completed] EventBrancherAgent finished in 7.92 seconds ==========
+2025-04-01 02:00:48,787 - INFO - ========== [Agent Completed] SearchPlannerAgent finished in 19.56 seconds ==========
+2025-04-01 02:01:50,990 - INFO - Added driving.ca to blacklist.
+2025-04-01 02:01:53,267 - INFO - Added theberkshireedge.com to blacklist.
+2025-04-01 02:01:53,331 - INFO - Added news24.com to blacklist.
+2025-04-01 02:01:53,652 - INFO - Added nationalpost.com to blacklist.
+2025-04-01 02:02:17,959 - INFO - Query Block 0: Total=89.17s | Fetch=79.66s | GPT=9.51s
+2025-04-01 02:02:19,082 - INFO - Query Block 1: Total=90.29s | Fetch=81.60s | GPT=8.69s
+2025-04-01 02:02:19,359 - INFO - Query Block 3: Total=90.57s | Fetch=85.43s | GPT=5.14s
+2025-04-01 02:02:19,422 - INFO - Query Block 4: Total=90.63s | Fetch=86.53s | GPT=4.10s
+2025-04-01 02:02:19,687 - INFO - Query Block 2: Total=90.90s | Fetch=86.79s | GPT=4.11s
+2025-04-01 02:02:19,688 - INFO - WebContentAnalyzerAgent: Completed analysis for 5 new query blocks in 90.90s.
+2025-04-01 02:02:19,688 - INFO - ========== [Agent Completed] WebContentAnalyzerAgent finished in 90.90 seconds ==========
+2025-04-01 02:02:19,706 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-31T23-02-19.json
+2025-04-01 02:02:19,706 - INFO - Session complete. Belief state updated.
+2025-04-01 02:02:19,721 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-03-31T23-02-19.json
+2025-04-01 04:05:45,127 - INFO - --- New Session Started ---
+2025-04-01 04:05:48,948 - INFO - EventParser: Skipping duplicate event: President Trump announces a 25% tariff on imported cars and car parts
+2025-04-01 04:05:48,949 - INFO - ========== [Agent Completed] EventParserAgent finished in 3.82 seconds ==========
+2025-04-01 04:05:48,975 - INFO - ========== [Agent Completed] EntityExpanderAgent finished in 0.03 seconds ==========
+2025-04-01 04:05:48,992 - INFO - ========== [Agent Completed] EventGroundingAgent finished in 0.02 seconds ==========
+2025-04-01 04:05:49,006 - INFO - ========== [Agent Completed] EventBrancherAgent finished in 0.01 seconds ==========
+2025-04-01 04:05:49,016 - INFO - ========== [Agent Completed] SearchPlannerAgent finished in 0.01 seconds ==========
+2025-04-01 04:05:49,017 - INFO - WebContentAnalyzerAgent: Completed analysis for 0 new query blocks in 0.00s.
+2025-04-01 04:05:49,017 - INFO - ========== [Agent Completed] WebContentAnalyzerAgent finished in 0.00 seconds ==========
+2025-04-01 04:05:55,380 - INFO - ========== [Agent Completed] PositionEvaluatorAgent finished in 6.36 seconds ==========
+2025-04-01 04:06:08,748 - INFO - ========== [Agent Completed] PositionPlannerAgent finished in 13.37 seconds ==========
+2025-04-01 04:06:08,776 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-04-01T01-06-08.json
+2025-04-01 04:06:08,776 - INFO - Session complete. Belief state updated.
+2025-04-01 04:06:08,797 - INFO - Belief state saved. Versioned copy: memory/versions\belief_state_2025-04-01T01-06-08.json

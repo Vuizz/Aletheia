@@ -12,8 +12,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-GOOGLE_CX = os.getenv("GOOGLE_SEARCH_ENGINE_ID")
 SERPER_API_KEY = os.getenv("SERPER_API_KEY")
 SEARCH_NUM_RESULTS = 5
 BLACKLIST_FILE = "blacklist.json"

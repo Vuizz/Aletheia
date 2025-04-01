@@ -19,10 +19,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"]
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ]
     }
   ],
   "grounded_events": [
@@ -31,10 +42,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -56,10 +78,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -74,9 +107,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The announcement of a 25% tariff on imported cars may lead to increased production costs for automakers reliant on foreign parts, potentially reducing their profit margins.",
-      "target_entities": ["General Motors"],
+      "target_entities": [
+        "General Motors"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Automotive",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts."
     },
@@ -85,10 +122,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -103,9 +151,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "With higher tariffs on imports, consumers may face increased prices for new vehicles, which could decrease overall demand and negatively impact car sales.",
-      "target_entities": ["Ford"],
+      "target_entities": [
+        "Ford"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Retail",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts."
     },
@@ -114,10 +166,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -132,9 +195,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "As a response to the tariffs, domestic manufacturers might ramp up production to fill the gap left by reduced imports, leading to potential job creation in the U.S. automotive sector.",
-      "target_entities": ["Fiat Chrysler Automobiles"],
+      "target_entities": [
+        "Fiat Chrysler Automobiles"
+      ],
       "expected_impact": "positive",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Manufacturing",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts."
     },
@@ -143,10 +210,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -161,9 +239,15 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The tariff could prompt automakers like Toyota and Volkswagen to reconsider their supply chains, possibly leading to shifts in manufacturing locations and strategies on a global scale.",
-      "target_entities": ["Toyota"],
+      "target_entities": [
+        "Toyota"
+      ],
       "expected_impact": "uncertain",
-      "affected_regions": ["United States", "Japan", "Germany"],
+      "affected_regions": [
+        "United States",
+        "Japan",
+        "Germany"
+      ],
       "sector": "Global Supply Chain",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts."
     },
@@ -172,10 +256,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -190,9 +285,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "Importers of vehicles and parts may experience decreased revenue due to reduced demand for foreign cars as prices rise, leading to potential market exits or consolidation.",
-      "target_entities": ["Volkswagen"],
+      "target_entities": [
+        "Volkswagen"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Import/Export",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts."
     }
@@ -203,10 +302,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -221,9 +331,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The announcement of a 25% tariff on imported cars may lead to increased production costs for automakers reliant on foreign parts, potentially reducing their profit margins.",
-      "target_entities": ["General Motors"],
+      "target_entities": [
+        "General Motors"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Automotive",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -239,10 +353,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -257,9 +382,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "With higher tariffs on imports, consumers may face increased prices for new vehicles, which could decrease overall demand and negatively impact car sales.",
-      "target_entities": ["Ford"],
+      "target_entities": [
+        "Ford"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Retail",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -275,10 +404,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -293,9 +433,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "As a response to the tariffs, domestic manufacturers might ramp up production to fill the gap left by reduced imports, leading to potential job creation in the U.S. automotive sector.",
-      "target_entities": ["Fiat Chrysler Automobiles"],
+      "target_entities": [
+        "Fiat Chrysler Automobiles"
+      ],
       "expected_impact": "positive",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Manufacturing",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -311,10 +455,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -329,9 +484,15 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The tariff could prompt automakers like Toyota and Volkswagen to reconsider their supply chains, possibly leading to shifts in manufacturing locations and strategies on a global scale.",
-      "target_entities": ["Toyota"],
+      "target_entities": [
+        "Toyota"
+      ],
       "expected_impact": "uncertain",
-      "affected_regions": ["United States", "Japan", "Germany"],
+      "affected_regions": [
+        "United States",
+        "Japan",
+        "Germany"
+      ],
       "sector": "Global Supply Chain",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -347,10 +508,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -365,9 +537,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "Importers of vehicles and parts may experience decreased revenue due to reduced demand for foreign cars as prices rise, leading to potential market exits or consolidation.",
-      "target_entities": ["Volkswagen"],
+      "target_entities": [
+        "Volkswagen"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Import/Export",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -385,10 +561,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -403,9 +590,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The announcement of a 25% tariff on imported cars may lead to increased production costs for automakers reliant on foreign parts, potentially reducing their profit margins.",
-      "target_entities": ["General Motors"],
+      "target_entities": [
+        "General Motors"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Automotive",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -430,10 +621,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -448,9 +650,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "With higher tariffs on imports, consumers may face increased prices for new vehicles, which could decrease overall demand and negatively impact car sales.",
-      "target_entities": ["Ford"],
+      "target_entities": [
+        "Ford"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Retail",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -475,10 +681,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -493,9 +710,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "As a response to the tariffs, domestic manufacturers might ramp up production to fill the gap left by reduced imports, leading to potential job creation in the U.S. automotive sector.",
-      "target_entities": ["Fiat Chrysler Automobiles"],
+      "target_entities": [
+        "Fiat Chrysler Automobiles"
+      ],
       "expected_impact": "positive",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Manufacturing",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -519,10 +740,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -537,9 +769,15 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The tariff could prompt automakers like Toyota and Volkswagen to reconsider their supply chains, possibly leading to shifts in manufacturing locations and strategies on a global scale.",
-      "target_entities": ["Toyota"],
+      "target_entities": [
+        "Toyota"
+      ],
       "expected_impact": "uncertain",
-      "affected_regions": ["United States", "Japan", "Germany"],
+      "affected_regions": [
+        "United States",
+        "Japan",
+        "Germany"
+      ],
       "sector": "Global Supply Chain",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -564,10 +802,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -582,9 +831,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "Importers of vehicles and parts may experience decreased revenue due to reduced demand for foreign cars as prices rise, leading to potential market exits or consolidation.",
-      "target_entities": ["Volkswagen"],
+      "target_entities": [
+        "Volkswagen"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Import/Export",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -610,10 +863,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -628,9 +892,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The announcement of a 25% tariff on imported cars may lead to increased production costs for automakers reliant on foreign parts, potentially reducing their profit margins.",
-      "target_entities": ["General Motors"],
+      "target_entities": [
+        "General Motors"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Automotive",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -658,10 +926,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -676,9 +955,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "With higher tariffs on imports, consumers may face increased prices for new vehicles, which could decrease overall demand and negatively impact car sales.",
-      "target_entities": ["Ford"],
+      "target_entities": [
+        "Ford"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Retail",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -706,10 +989,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -724,9 +1018,15 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "The tariff could prompt automakers like Toyota and Volkswagen to reconsider their supply chains, possibly leading to shifts in manufacturing locations and strategies on a global scale.",
-      "target_entities": ["Toyota"],
+      "target_entities": [
+        "Toyota"
+      ],
       "expected_impact": "uncertain",
-      "affected_regions": ["United States", "Japan", "Germany"],
+      "affected_regions": [
+        "United States",
+        "Japan",
+        "Germany"
+      ],
       "sector": "Global Supply Chain",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [
@@ -754,10 +1054,21 @@
       "type": "policy",
       "date": "2025-03-27",
       "analyzed": true,
-      "entities": ["President Trump", "automakers", "importers"],
-      "regions": ["United States"],
-      "sectors": ["Automotive"],
-      "themes": ["trade policy", "tariffs"],
+      "entities": [
+        "President Trump",
+        "automakers",
+        "importers"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "sectors": [
+        "Automotive"
+      ],
+      "themes": [
+        "trade policy",
+        "tariffs"
+      ],
       "notable_entities": [
         "General Motors",
         "Ford",
@@ -772,9 +1083,13 @@
       ],
       "regional_context": "The U.S. automotive industry is grappling with supply chain disruptions and inflationary pressures. President Trump's tariff announcement aims to protect domestic manufacturing but risks escalating trade tensions, particularly with key trading partners like Japan and Germany.",
       "branch": "Importers of vehicles and parts may experience decreased revenue due to reduced demand for foreign cars as prices rise, leading to potential market exits or consolidation.",
-      "target_entities": ["Volkswagen"],
+      "target_entities": [
+        "Volkswagen"
+      ],
       "expected_impact": "negative",
-      "affected_regions": ["United States"],
+      "affected_regions": [
+        "United States"
+      ],
       "sector": "Import/Export",
       "parent_event": "President Trump announced a 25% tariff on imported cars and car parts.",
       "queries": [

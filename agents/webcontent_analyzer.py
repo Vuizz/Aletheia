@@ -28,7 +28,6 @@ class WebContentAnalyzerAgent(AgentRunner):
         search_queries = belief_state.get("search_queries", [])
         existing_results = belief_state.get("websearch_results", [])
 
-        # Create set of existing query signatures
         existing_signatures = {
             self._signature(result) for result in existing_results
         }
@@ -36,9 +35,9 @@ class WebContentAnalyzerAgent(AgentRunner):
         new_results = []
         overall_start = time.time()
 
-        # Build tasks with references to the original blocks
         pending_blocks = [
-            block for block in search_queries if not block.get("analyzed")]
+            block for block in search_queries if not block.get("analyzed")
+        ]
         tasks = [self.process_query_block(block, idx)
                  for idx, block in enumerate(pending_blocks)]
 
@@ -54,7 +53,8 @@ class WebContentAnalyzerAgent(AgentRunner):
                 block["analyzed"] = True
             elif isinstance(result, Exception):
                 logging.warning(
-                    f"WebContentAnalyzerAgent: Error processing block: {result}")
+                    f"WebContentAnalyzerAgent: Error processing block: {result}"
+                )
 
         belief_state["websearch_results"] = existing_results + new_results
         self.summary = f"WebContentAnalyzerAgent: Completed analysis for {len(new_results)} new query blocks in {time.time() - overall_start:.2f}s."
@@ -67,7 +67,6 @@ class WebContentAnalyzerAgent(AgentRunner):
         if not queries:
             return None
 
-        # Step 1: Fetch articles
         fetch_start = time.time()
         article_text_blocks = []
         article_tasks = [get_articles_for_query_async(q) for q in queries]
@@ -88,13 +87,13 @@ class WebContentAnalyzerAgent(AgentRunner):
                 f"WebContentAnalyzerAgent: No articles found for query block: {queries}")
             return None
 
-        # Step 2: Prepare prompt
         hypothesis_intro = (
             f"You are evaluating a hypothesis related to the following market event.\n\n"
-            f"Ticker: {query_block.get('ticker')}\n"
-            f"Event: {query_block.get('event')}\n"
+            f"Branch: {query_block.get('branch')}\n"
             f"Expected Impact: {query_block.get('expected_impact')}\n"
-            f"Rationale: {query_block.get('rationale')}\n\n"
+            f"Target Entities: {', '.join(query_block.get('target_entities', []))}\n"
+            f"Sector: {query_block.get('sector')}\n"
+            f"Affected Regions: {', '.join(query_block.get('affected_regions', []))}\n\n"
             f"Use the articles below to evaluate whether the evidence supports, refutes, or leaves uncertain the expected impact.\n\n"
         )
         user_prompt = hypothesis_intro + "\n\n".join(article_text_blocks)
@@ -104,7 +103,6 @@ class WebContentAnalyzerAgent(AgentRunner):
             {"role": "user", "content": user_prompt.strip()},
         ]
 
-        # Step 3: Call GPT
         gpt_start = time.time()
         try:
             raw_result = await call_gpt(messages=messages, response_format=WebContent)
@@ -133,6 +131,6 @@ class WebContentAnalyzerAgent(AgentRunner):
     def _signature(self, item: dict) -> str:
         return json.dumps({
             "event": item.get("event"),
-            "ticker": item.get("ticker"),
+            "branch": item.get("branch"),
             "queries": sorted(item.get("queries", []))
         }, sort_keys=True)

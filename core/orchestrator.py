@@ -5,10 +5,11 @@ from core.state_manager import load_state, save_state
 from agents.event_parser import EventParserAgent
 from agents.entity_expander import EntityExpanderAgent
 from agents.event_grounding import EventGroundingAgent
-from agents.asset_impact_mapper import AssetImpactMapperAgent
 from agents.search_planner import SearchPlannerAgent
 from agents.webcontent_analyzer import WebContentAnalyzerAgent
 from agents.event_brancher import EventBrancherAgent
+from agents.position_evaluator import PositionEvaluatorAgent
+from agents.position_planner import PositionPlannerAgent
 
 import time
 
@@ -50,15 +51,7 @@ async def run_analysis(user_input):
     logging.info(
         "========== [Agent Completed] EventBrancherAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Step 5: Mapping events
-    start = time.time()
-    mapping_agent = AssetImpactMapperAgent()
-    state = await mapping_agent.run(state, user_input)
-    summaries.append(mapping_agent.summary)
-    logging.info(
-        "========== [Agent Completed] AssetImpactMapperAgent finished in %.2f seconds ==========", (time.time()-start))
-
-    # Step 6: Questioning events
+    # Step 5: Questioning events
     start = time.time()
     question_agent = SearchPlannerAgent()
     state = await question_agent.run(state, user_input)
@@ -66,13 +59,29 @@ async def run_analysis(user_input):
     logging.info(
         "========== [Agent Completed] SearchPlannerAgent finished in %.2f seconds ==========", (time.time()-start))
 
-    # Step 7: Websearching events
+    # Step 6: Websearching events
     start = time.time()
     websearch_agent = WebContentAnalyzerAgent()
     state = await websearch_agent.run(state, user_input)
     summaries.append(websearch_agent.summary)
     logging.info(
         "========== [Agent Completed] WebContentAnalyzerAgent finished in %.2f seconds ==========", (time.time()-start))
+
+    # # Step 7: Evaluating positions
+    start = time.time()
+    evaluator_agent = PositionEvaluatorAgent()
+    state = await evaluator_agent.run(state, user_input)
+    summaries.append(evaluator_agent.summary)
+    logging.info(
+        "========== [Agent Completed] PositionEvaluatorAgent finished in %.2f seconds ==========", (time.time()-start))
+
+    # Step 8: Planning positions
+    start = time.time()
+    planner_agent = PositionPlannerAgent()
+    state = await planner_agent.run(state, user_input)
+    summaries.append(planner_agent.summary)
+    logging.info(
+        "========== [Agent Completed] PositionPlannerAgent finished in %.2f seconds ==========", (time.time()-start))
 
     # Save updated state (versioned)
     save_state(state)

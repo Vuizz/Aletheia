@@ -34,6 +34,7 @@ class EventGroundingAgent(AgentRunner):
         enriched_events = belief_state.get("enriched_events", [])
         grounded_events = belief_state.get("grounded_events", [])
 
+        new_events = 0
         for event in enriched_events:
             if event.get("analyzed", False):
                 continue  # Skip already-analyzed events
@@ -60,6 +61,7 @@ class EventGroundingAgent(AgentRunner):
                     "analyzed": False  # This grounded event hasn't been processed further
                 })
 
+                new_events += 1
                 grounded_events.append(grounded_event)
                 event["analyzed"] = True  # mark enriched event as processed
 
@@ -72,7 +74,7 @@ class EventGroundingAgent(AgentRunner):
                 grounded_events.append(fallback_event)
 
         belief_state["grounded_events"] = grounded_events
-        self.summary = f"EventGroundingAgent: Grounded {len(grounded_events)} events with contextual data."
+        self.summary = f"EventGroundingAgent: Grounded {new_events} events with contextual data."
 
         return belief_state
 

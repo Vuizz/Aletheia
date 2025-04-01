@@ -93,10 +93,7 @@ async def main():
 
         print("\n🔍 Running agent pipeline...\n")
 
-        belief_state = await run_analysis(input_text)
-
-        # ✅ Save after each run
-        save_state(belief_state)
+        await run_analysis(input_text)
 
         print("\n📌 Done with this article.\n")
 

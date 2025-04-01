@@ -77,7 +77,7 @@ class EntityExpanderAgent(AgentRunner):
 
         enriched_events += new_enriched
         belief_state["enriched_events"] = enriched_events
-        self.summary = f"EntityExpander: Expanded {len(new_enriched)} new events (total: {len(enriched_events)})."
+        self.summary = f"EntityExpander: Expanded {len(new_enriched)} new events."
 
         return belief_state
 

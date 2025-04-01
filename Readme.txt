@@ -59,6 +59,13 @@ AssetImpactMapperAgent	Maps grounded events to affected assets and forecasts the
 
 
 ⚙️ Usage
+clone this repo and create a .env file in its root folder, add your api_keys in this env file as such:
+OPENAI_API_KEY=sk-proj-tyui67
+NEWS_API_KEY=rt68erur5t6
+DEEPSEEK_API_KEY=sk-rturtur6u6rt6
+SERPER_API_KEY=rurd5dyruru
+
+
 You can run the system manually using the orchestrator:
 python run.py
 Agents work incrementally: each builds upon the output of the previous. Intermediate outputs are stored in memory/belief_state.json.

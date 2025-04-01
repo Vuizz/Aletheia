@@ -19,7 +19,7 @@ class SearchPlannerAgent(AgentRunner):
         self.summary = ""
 
     async def run(self, belief_state: dict, input_data: str = None) -> dict:
-        mapped_assets = belief_state.get("mapped_assets", [])
+        mapped_assets = belief_state.get("event_branches", [])
         existing_queries = belief_state.get("search_queries", [])
 
         # Track existing signatures to avoid duplication
